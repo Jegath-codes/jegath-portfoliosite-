@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jegath M | Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{background:#0d0d12;color:#eee;font-family:system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+#intro{position:fixed;inset:0;background:#000;z-index:5;display:flex;align-items:center;justify-content:center;animation:fade 1s 2.4s forwards;pointer-events:none}
+#intro h1{font-size:2rem;letter-spacing:.3em;animation:txt 2.2s forwards}
+@keyframes txt{0%{opacity:0;transform:scale(.6)}40%{opacity:1}100%{opacity:0;transform:scale(2.5)}}
+@keyframes fade{to{opacity:0;visibility:hidden}}
+.stage{position:relative;width:min(92vw,520px);animation:zoom 2.6s cubic-bezier(.2,.8,.2,1) both;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px #0008}
+@keyframes zoom{0%{transform:scale(.15);opacity:0;filter:blur(8px)}35%{opacity:1}100%{transform:scale(1);filter:none}}
+.stage img{display:block;width:100%}
+.head{position:absolute;inset:0;clip-path:ellipse(19% 21% at 53% 22%);transform-origin:53% 42%;animation:nod 5s ease-in-out infinite 2.6s}
+@keyframes nod{0%,100%{transform:rotate(-1.6deg) translateY(0)}50%{transform:rotate(1.6deg) translateY(-1.5px)}}
+.hot{position:absolute;border:0;background:transparent;cursor:pointer;border-radius:12px}
+.hot::after{content:"";position:absolute;inset:0;border-radius:12px;border:2px solid #ffd54f;animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.18)}}
+#laptop{left:23%;top:55%;width:44%;height:20%}
+#coffee{left:4%;top:56%;width:17%;height:20%}
+.hint{margin-top:14px;font-size:.9rem;color:#aaa;opacity:0;animation:fade2 1s 3s forwards}
+@keyframes fade2{to{opacity:1}}
+.panel{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;justify-content:center;z-index:10}
+.panel.open{display:flex}
+.card{background:#1a1a22;width:min(100%,560px);max-height:85vh;overflow:auto;border-radius:20px 20px 0 0;padding:22px 22px calc(22px + env(safe-area-inset-bottom,0px));animation:up .35s ease}
+@keyframes up{from{transform:translateY(100%)}}
+.card h2{color:#ffd54f;margin-bottom:10px}
+.card h3{margin:16px 0 6px;font-size:1rem;color:#9ad}
+.card p,.card li{font-size:.92rem;line-height:1.5;color:#ddd}
+.card ul{padding-left:18px}
+.chips span{display:inline-block;background:#2b2b38;border-radius:20px;padding:4px 11px;margin:3px 3px 0 0;font-size:.82rem}
+.card a{color:#ffd54f}
+.close{float:right;background:#2b2b38;color:#fff;border:0;border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="intro"><h1>JEGATH M</h1></div>
+
+<div class="stage">
+  <img src="profile.webp" alt="Jegath at his desk">
+  <div class="head"><img src="profile.webp" alt=""></div>
+  <button class="hot" id="laptop" aria-label="Open skills and projects"></button>
+  <button class="hot" id="coffee" aria-label="Open about and contact"></button>
+</div>
+<p class="hint">Tap the laptop 💻 or the coffee ☕</p>
+
+<div class="panel" id="p-laptop">
+  <div class="card">
+    <button class="close" data-close>✕</button>
+    <h2>💻 Skills &amp; Projects</h2>
+    <h3>Technical Skills</h3>
+    <div class="chips">
+      <span>Java</span><span>Python</span><span>C</span><span>C++</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>PHP</span><span>MySQL</span><span>SQL</span><span>Git</span><span>GitHub</span><span>VS Code</span><span>MS Office</span>
+    </div>
+    <h3>Online Hostel Management System <small>(Academic Team Project)</small></h3>
+    <p>HTML5, CSS3, JavaScript, PHP, MySQL</p>
+    <ul>
+      <li>Web-based hostel system for student room allocation, attendance and fee tracking.</li>
+      <li>Designed relational MySQL schemas for secure storage and reliable queries.</li>
+      <li>Built core modules and coordinated integration with teammates.</li>
+    </ul>
+    <h3>Personal Developer Portfolio <small>(Personal Project)</small></h3>
+    <p>HTML5, CSS3, JavaScript</p>
+    <ul>
+      <li>Responsive portfolio hosted on GitHub Pages.</li>
+      <li>Clean layouts and mobile-friendly navigation.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel" id="p-coffee">
+  <div class="card">
+    <button class="close" data-close>✕</button>
+    <h2>☕ About Me</h2>
+    <p>Detail-oriented BCA graduate with a strong foundation in full-stack web development and object-oriented programming. Hands-on experience building database-driven web apps with MySQL. Looking for an entry-level Software Developer or Web Developer role to build scalable applications.</p>
+    <h3>Education</h3>
+    <ul>
+      <li><b>BCA</b> (2022–2026), Loyola College of Arts and Science, CGPA 6.5/10</li>
+      <li><b>HSC</b> (2022), Sri Ramakrishna Saradha Higher Secondary School</li>
+      <li><b>SSLC</b> (2020), Sri Ramakrishna Saradha Higher Secondary School</li>
+    </ul>
+    <h3>Languages</h3>
+    <p>English (Written &amp; Verbal), Tamil (Native)</p>
+    <h3>Contact</h3>
+    <ul>
+      <li>📍 Salem, Tamil Nadu</li>
+      <li>✉️ <a href="mailto:jegath.mahe@gmail.com">jegath.mahe@gmail.com</a></li>
+      <li>🐙 <a href="https://github.com/jegath-codes" target="_blank" rel="noopener">github.com/jegath-codes</a></li>
+      <li>🌐 <a href="https://jegath-codes.github.io/Jegath-codes-/" target="_blank" rel="noopener">Portfolio</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+function open_(id){document.getElementById(id).classList.add('open')}
+document.getElementById('laptop').onclick=()=>open_('p-laptop');
+document.getElementById('coffee').onclick=()=>open_('p-coffee');
+document.querySelectorAll('.panel').forEach(p=>{
+  p.addEventListener('click',e=>{if(e.target===p||e.target.hasAttribute('data-close'))p.classList.remove('open')});
+});
+</script>
+</body>
+</html>

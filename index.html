@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jegath M | Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:#0d0d12;color:#eee;font-family:system-ui,sans-serif;overflow:hidden}
+#intro{position:fixed;inset:0;background:#000;z-index:5;display:flex;align-items:center;justify-content:center;animation:fade 1s 2.4s forwards;pointer-events:none}
+#intro h1{font-size:2rem;letter-spacing:.3em;animation:txt 2.2s forwards}
+@keyframes txt{0%{opacity:0;transform:scale(.6)}40%{opacity:1}100%{opacity:0;transform:scale(2.5)}}
+@keyframes fade{to{opacity:0;visibility:hidden}}
+.cam{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:0 0;transition:transform 1.4s cubic-bezier(.65,0,.25,1)}
+.stage{position:relative;width:min(92vw,520px);animation:zoom 2.6s cubic-bezier(.2,.8,.2,1) both;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px #0008}
+@keyframes zoom{0%{transform:scale(.15);opacity:0;filter:blur(8px)}35%{opacity:1}100%{transform:scale(1);filter:none}}
+.stage img{display:block;width:100%}
+.head{position:absolute;inset:0;clip-path:ellipse(19% 21% at 53% 22%);transform-origin:53% 42%;animation:nod 5s ease-in-out infinite 2.6s}
+@keyframes nod{0%,100%{transform:rotate(-1.6deg) translateY(0)}50%{transform:rotate(1.6deg) translateY(-1.5px)}}
+.hot{position:absolute;border:0;background:transparent;cursor:pointer;border-radius:12px;left:23%;top:55%;width:44%;height:20%}
+.hot::after{content:"";position:absolute;inset:0;border-radius:12px;border:2px solid #ffd54f;animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.18)}}
+.hint{margin-top:14px;font-size:.9rem;color:#aaa;opacity:0;animation:fade2 1s 3s forwards;transition:opacity .4s}
+@keyframes fade2{to{opacity:1}}
+.cam.zoomed .hint{animation:none;opacity:0}
+
+/* laptop screen resume */
+#screen{position:fixed;inset:0;z-index:8;background:#0f1117;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .6s}
+#screen.show{opacity:1;visibility:visible}
+.bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:8px;padding:12px 14px;padding-top:calc(12px + env(safe-area-inset-top,0px));background:#161922ee;backdrop-filter:blur(8px);border-bottom:1px solid #262a36}
+.bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.bar .url{flex:1;margin:0 8px;background:#0f1117;border-radius:8px;padding:5px 10px;font-size:.75rem;color:#8a90a2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar button{background:#ffd54f;color:#111;border:0;border-radius:8px;padding:6px 12px;font-weight:600;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:26px 20px calc(50px + env(safe-area-inset-bottom,0px))}
+.hero{padding:28px 22px;border-radius:18px;background:linear-gradient(135deg,#242a4a,#3a2a52);margin-bottom:22px}
+.hero h1{font-size:2rem}
+.hero p{color:#cfd3e6;margin-top:6px;line-height:1.5;font-size:.95rem}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.links a{background:#ffffff1c;color:#fff;text-decoration:none;border-radius:20px;padding:6px 13px;font-size:.82rem}
+section{margin-bottom:24px}
+section h2{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#ffd54f;margin-bottom:12px}
+.box{background:#171a24;border:1px solid #262a36;border-radius:14px;padding:16px;margin-bottom:12px}
+.box h3{font-size:1rem}.box small{color:#8a90a2}
+.box p,.box li{color:#cfd3e6;font-size:.9rem;line-height:1.55;margin-top:6px}
+.box ul{padding-left:18px}
+.chips span{display:inline-block;background:#232838;border-radius:20px;padding:5px 12px;margin:3px 4px 0 0;font-size:.82rem}
+.row{display:flex;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+<div id="intro"><h1>JEGATH M</h1></div>
+
+<div class="cam" id="cam">
+  <div class="stage">
+    <img src="profile.webp" alt="Jegath at his desk">
+    <div class="head"><img src="profile.webp" alt=""></div>
+    <button class="hot" id="laptop" aria-label="Open laptop"></button>
+  </div>
+  <p class="hint">Tap the laptop 💻</p>
+</div>
+
+<div id="screen">
+  <div class="bar">
+    <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+    <div class="url">jegath-codes.github.io/resume</div>
+    <button id="back">← Back</button>
+  </div>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Jegath M</h1>
+      <p>BCA graduate | Full-stack web developer (HTML5, CSS3, JavaScript, React.js, PHP) seeking an entry-level Software Developer or Web Developer role.</p>
+      <div class="links">
+        <a href="#">📍 Salem, Tamil Nadu</a>
+        <a href="mailto:jegath.mahe@gmail.com">✉️ jegath.mahe@gmail.com</a>
+        <a href="https://github.com/jegath-codes" target="_blank" rel="noopener">🐙 GitHub</a>
+        <a href="https://jegath-codes.github.io/Jegath-codes-/" target="_blank" rel="noopener">🌐 Portfolio</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Professional Summary</h2>
+      <div class="box"><p>Detail-oriented BCA graduate with a strong foundation in full-stack web development and object-oriented programming (Java, Python, C++). Hands-on experience building database-driven web applications using MySQL and SQL, keen to build scalable applications and contribute to organizational growth.</p></div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="box"><h3>Programming Languages</h3><div class="chips"><span>Java</span><span>Python</span><span>C</span><span>C++</span></div></div>
+      <div class="box"><h3>Web Technologies</h3><div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>PHP</span></div></div>
+      <div class="box"><h3>Databases</h3><div class="chips"><span>MySQL</span><span>SQL</span></div></div>
+      <div class="box"><h3>Tools &amp; Software</h3><div class="chips"><span>Git</span><span>GitHub</span><span>VS Code</span><span>MS Word</span><span>MS Excel</span></div></div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="box">
+        <div class="row"><h3>Online Hostel Management System</h3><small>Team Project</small></div>
+        <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div>
+        <ul>
+          <li>Web-based hostel system to digitize room allocation, attendance and fee tracking.</li>
+          <li>Designed relational MySQL schemas for secure storage and reliable queries.</li>
+          <li>Built core modules and coordinated integration with teammates for timely delivery.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="row"><h3>Personal Developer Portfolio</h3><small>Personal Project</small></div>
+        <div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+        <ul>
+          <li>Responsive portfolio hosted on GitHub Pages to showcase projects and skills.</li>
+          <li>Clean layouts and mobile-friendly navigation for cross-device viewing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="box">
+        <div class="row"><h3>Bachelor of Computer Applications</h3><small>2022 – 2026</small></div>
+        <p>Loyola College of Arts and Science · CGPA 6.5 / 10</p>
+        <p>Data Structures, Operating Systems, Web Development, SQL, Java, Python</p>
+      </div>
+      <div class="box"><div class="row"><h3>HSC (12th)</h3><small>2022</small></div><p>Sri Ramakrishna Saradha Higher Secondary School</p></div>
+      <div class="box"><div class="row"><h3>SSLC (10th)</h3><small>2020</small></div><p>Sri Ramakrishna Saradha Higher Secondary School</p></div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <div class="box"><div class="chips"><span>English (Written &amp; Verbal)</span><span>Tamil (Native)</span></div></div>
+    </section>
+  </div>
+</div>
+
+<script>
+const cam=document.getElementById('cam'),scr=document.getElementById('screen'),lap=document.getElementById('laptop');
+lap.onclick=()=>{
+  const r=lap.getBoundingClientRect();
+  const s=Math.min(innerWidth*0.95/r.width,innerHeight*0.95/r.height*1.6);
+  const tx=innerWidth/2-(r.left+r.width/2)*s, ty=innerHeight/2-(r.top+r.height/2)*s;
+  cam.classList.add('zoomed');
+  cam.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;
+  setTimeout(()=>{scr.classList.add('show');scr.scrollTop=0},1100);
+};
+document.getElementById('back').onclick=()=>{
+  scr.classList.remove('show');
+  cam.style.transform='';
+  cam.classList.remove('zoomed');
+};
+</script>
+</body>
+  </html>
+  
